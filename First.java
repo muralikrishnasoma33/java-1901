@@ -1,7 +1,7 @@
 class First
 {
-    public static void main(string[] args)
+    public static void main(String[] args)
     {
-        System.out.println("Welcome the World");
+        System.out.println("Welcome to the World");
     }
 }
