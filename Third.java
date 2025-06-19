@@ -1,4 +1,4 @@
-public class Datatypes {
+public class Third {
     public static void main(String[] args)
     {
         String name = "Soma Murali Krishna";
