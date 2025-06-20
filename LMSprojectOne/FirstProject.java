@@ -1,4 +1,4 @@
-package LMSprojects;
+package LMSprojectOne;
 
 public class FirstProject 
 {
