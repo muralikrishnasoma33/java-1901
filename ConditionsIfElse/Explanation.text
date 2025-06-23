@@ -1,0 +1,65 @@
+=============DECISION MAKING STATEMENTS===============
+1.if
+2.if-else
+3.Nested Else if
+4.Switch Statement
+5.Ternanry Operator(Concise fprm of else if)
+
+
+-------IF------
+Syntax:
+if (Condition){
+    Statemnts
+}
+
+-------if else------
+Syntax:
+if(condtion)[
+    Ststements
+]else{
+    Statements
+}
+
+-------Ternary Operator------
+Syntax;
+variable = (condition) ? value_if_true:value_if_false;
+ 
+
+--------Nested Else if--------
+Syntax:
+if(Condition){
+    Statements
+}else if (Condition){
+    Statements
+}else if(condition){
+    Statements
+}else if(condition){
+    Stements
+}
+ .
+ .
+ .
+ else{
+    Statement
+ }
+
+ ----------Switch Statement----------
+ Syntax:
+ switch(expression) {
+    case value1:
+    Statements
+    break;
+    case value2:
+    Statements
+    break;
+    .
+    .
+    .
+    .
+    default:
+    Statement
+    break;
+ }
+
+ ---------New Switch---------
+ (->):Arrow
