@@ -10,9 +10,10 @@ public class LMSprojectFour {
         int studentId = scanner.nextInt();
 
         System.out.println("Enter Student Name");
+        scanner.nextLine();
         String studentName = scanner.nextLine();
 
-        double attendance = 0;
+        double attendance = 85;
         int totalScore = 0;
         int numberOfSubjects = 0;
 
@@ -20,13 +21,13 @@ public class LMSprojectFour {
         char continueInput = 'y';
         
         //why not FOR loop? : which students will input how many subject scores
-        while(continueInput=='y'|| continueInput=='Y'){
+        while(continueInput == 'y' || continueInput == 'Y'){
             System.out.println("Enter Score For Subject :"+(numberOfSubjects+1));
             int currentScore = scanner.nextInt();
             numberOfSubjects++; //increment
 
             totalScore+=currentScore; //add each currentscore to TotalScore
-            System.out.println("Do You Want to Enter another Score?:(y/n)");
+            System.out.println("Do You Want to Enter another Score?:(Yes/No)");
             continueInput = scanner.next().charAt(0);
         }
         
@@ -43,14 +44,18 @@ public class LMSprojectFour {
         }else{
             performance = "Needs Improvement";
         }
+
+        //attendance
+        String attendanceStatus = attendance < 75 ? "Warning for low attendace" : "Has Good attendance";
         
         System.out.println("Student ID : "+studentId);
         System.out.println("Enter Student Name : "+studentName);
         System.out.println("Total Score : "+totalScore);
         System.out.println("Average Score : "+averageScore);
         System.out.println("Performance : "+performance);
-
+        System.out.println("Attendance : "+attendanceStatus);
         
+        scanner.close();
 
     }
 }
