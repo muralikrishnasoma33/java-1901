@@ -1,4 +1,4 @@
-package LMSThirdIfElse;
+package LMSThirdProject;
 
 public class LMSConditionals {
     public static void main(String[] args){
