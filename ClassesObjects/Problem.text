@@ -1,0 +1,38 @@
+                   Project Based - LMS - 6
+
+In this task, you will build a simple console-based program that simulates a basic Learning Management System (LMS) functionality involving both students and trainers.
+
+
+1. Student Module:
+     1) Student Class: This class represents a student with attributes like ID, name,  attendance, performance scores and trainer ratings. It includes methods for calculating attendance credits, performance credits, and determining the student’s achievement status.
+     2) Collect and display the Student ID and Name.
+     3) prompt for the number of sessions attended by the student.
+        Accept a score and calculate:
+        Attendance credits based on the number of sessions attended:
+            30 or more: +5 credits
+            20–29: +3 credits
+            Below 20: 0 credits
+        Performance credits based on the score:
+            85 or more: +5 credits
+            60–84: +3 credits
+            Below 60: 0 credits
+     4) Compute final achievement based on total credits: 
+            10 or more → GOLD
+            8–9 → SILVER
+            Below 8 → "You Need To IMPROVE"
+
+2. Trainer Module:
+
+      1) Trainer Class: This class represents a trainer with attributes like ID, name, and sessions taken. 
+         It calculates the trainer’s payment based on sessions and a potential bonus that is determined by the student’s rating.
+      2) Collect and display the Trainer ID and Name.
+      3) Ask for the number of sessions taken by the trainer.
+      4) Calculate session-based payment (₹1500 per session).
+      5) Prompt for student's rating for the trainer (1 to 5):
+            If rating is 5 → add bonus of ₹5000
+            Otherwise → no bonus
+            Display total trainer payment (session payment + bonus)
+
+
+    LMSGradePaymentTracker (Main Class): This is the main class where we instantiate objects of Student and Trainer, set some initial values, 
+and use the methods from each class to perform calculations and display information.
