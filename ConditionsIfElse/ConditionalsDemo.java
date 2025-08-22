@@ -105,7 +105,7 @@ public class ConditionalsDemo {
             case 6,7 -> "Not Holiday";
             default -> "Nothing";
         };
-        System.out.println(dayName)
+        System.out.println(dayName);
 
     }
     
