@@ -1,0 +1,23 @@
+Arrays:
+    Variable : It stores only one value.
+    Array    : It stores Multiple values.
+
+Types Of Arrays:
+    1. Single Dimensional Array:
+
+    -->Syntax:
+       (OLD ONE) --> datatype [] variable_name = new datatype [size]
+
+                         (or)
+
+       (NEW ONE) --> datatype [] variable_name = {......}
+    
+       Note : SIZE is Fixed in Arrays,you cannot EXPAND.
+
+    --> Index : Index helps you access or assign inside an array Index starts from 0.
+
+    --> If we go beyond the size we will get Exceptions.
+    --> All the elements in the array should be SAME DATATYPE.
+
+
+

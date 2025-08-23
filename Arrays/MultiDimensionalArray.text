@@ -1,0 +1,16 @@
+
+Multi Dimensional Array:
+       
+       -> Multi Dimesional Arrays have both X & Y axis,unlike Single Dimensional Arrays which has only one X-axis.
+
+       -> [1 2 3 4]
+          [5 6 7 8]
+
+       -> Syntax :
+        DataType [][] Variable_name = new DataType[rows][Columns];
+
+        int [][] TwoDiArray = new int[3][3];
+        int [][][] ThreeDiArray = new int [3][3][3]; 
+        
+        NOTE : If Rows and Columns are equal then we call it as Multi Dimensional Array.
+        NOTE : If Rows and Columns are not equal then we call it as Jagged Arrays.
