@@ -1,0 +1,12 @@
+Strings : 
+    -> Strings are sequence of Characters , Which is non-primitive datatype.
+
+    -> Strings are IMMUTABLE in Nature,IMMUTABLE(Cannot Change Once Created).
+
+    ->Strings are LITERALS
+
+           -> Strings can serve as a datatype and also a class,which is UNIQUE Behaviour.
+
+           -> Strings Concatenation 
+                 By using + we can combine multiple Strings
+                 
