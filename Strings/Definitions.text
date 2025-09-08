@@ -9,4 +9,23 @@ Strings :
 
            -> Strings Concatenation 
                  By using + we can combine multiple Strings
-                 
+           -> Different Ways to create Strings in Java:
+
+                * Using String Literals:
+
+                      String Name = "Murali";
+
+                      NOTE : When we use literals,We are assigning same memory block,if the content is same.
+
+                * Using NEW Keyword:
+
+                      String email = new String("muralikrishnasoma9@gmail.com");
+
+                      NOTE : When we use new Keyword,We are Assigning new memory block,regardless the content is same or not.
+
+                > When we use Primitive datatypes like int, float, double etc.. ==  does compare values
+                > When we use Strings == does compare memory addresses
+                > When we need to compare values of Strings then we use ( Equals() ).
+
+                * String Pool / string Constant Pool :
+                    > An address pool where common string literals are stored and given same memory address
