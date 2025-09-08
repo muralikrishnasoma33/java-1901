@@ -29,3 +29,24 @@ Strings :
 
                 * String Pool / string Constant Pool :
                     > An address pool where common string literals are stored and given same memory address
+
+
+-> String Buffer & String Builder :
+     
+      >  Strings are IMMUTABLE in Nature,IMMUTABLE(Cannot Change Once Created).
+      >  Why Strings to be Mutable?
+         - When you want to update.
+         - We can improve Performance.
+      > To Overcome above Issues we use String Buffers and String Builders.
+         - When we do manipulations/Changes on STring Buffers and String Builders,
+           we don't create new object every time like in Strings.
+         - Strings are like Pen And Paper.(Why we named like this? Means When we completed paper by writing with pen,we don't reuse)
+         - Strings Buffers & String Builders Are Like Marker and WhiteBoard.(why means we can reuse whiteboard)
+
+      > Comparison:
+                           Can Modify                 Create New Object              When to Use           Performance
+        Strings               NO                             YES                        No CHANGES             SLOW
+
+        String Buffers        YES                             NO                        To Modify              SLOW(Due to Synchronization) (MultiThreaded)
+
+        String Builders       YES                             No                        To Modify              FAST(NO Synchronization)  (SingleThreaded)
