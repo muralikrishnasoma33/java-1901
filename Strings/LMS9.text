@@ -1,0 +1,14 @@
+In this project use case, 
+    *Calculate Course Fee and apply some discounts based on the students Description, 
+            1. Collect Basic Student Info
+                studentID, studentName, studentMobileNumber, studentAge, and studentDescription, courseFee
+
+    *Accept Student Description and apply discounts:
+    *Apply Discounts based on the keywords given:
+            reference: 5000 discount 
+            scholarship: 7000 discount 
+            promo: 3000 discount 
+
+        Base Course Fee: 30000
+
+NOTE: Calculate the Final Course Fee, output Base Course Fee and calculate the discount and give the final course fee.
