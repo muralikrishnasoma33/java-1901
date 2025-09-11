@@ -20,6 +20,16 @@ public class Test {
         System.out.println(t1.number);
         System.out.println(t2.number);
         System.out.println(t3.number);
+
+      //    Non-Static Variables (Instance Variables) :
+      //-> Variables defined inside the class,but outside the method without static keyword.
+      //-> They are UNIQUE to each object.
+
+      //  Example :
+      //  114001120
+      // -2028872680
+      //  1410417713
+        
     }
     
 }
