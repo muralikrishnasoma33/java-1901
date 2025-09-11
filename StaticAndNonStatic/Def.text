@@ -1,0 +1,26 @@
+Static & Non-Static :
+    -> To Understand Memory Management perspective we need to understand Static & Non-Static.
+    -> The Concept of static cmae,with a basic design of executing java programs.
+
+       -> In How many ways we allocate memory ?
+           1. Using new keyword(Object Creation).
+           2. Using Static keyword.
+       -> NOTE : Whenever we see static keyword in your code, JVM will IMPLICITLY assign MEMORY without OBJECT CREATION.
+
+       -> Method Area : 
+             > Will store Class level Data (Static) Staic methods & Variables.
+             > Here Memory allocation is done,when we use 'static' keyword.
+       -> Heap Area :
+             > Will store Object Data.(Non-Static)
+             > Here memory allocation is done,When we use 'new' Keyword.
+
+
+Non-Static Variables (Instance Variables) :
+      -> Variables defined inside the class,but outside the method without static keyword.
+      -> They are UNIQUE to each object.
+Static Keyword :
+      -> Variables defined inside the class, but outside the method using static keyword.
+      -> They are COMMON/STATIC to each object.
+      -> While accessing static variables, recommended to use classname.variable_name.
+                   
+ 
