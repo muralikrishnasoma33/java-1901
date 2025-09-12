@@ -22,5 +22,104 @@ Static Keyword :
       -> Variables defined inside the class, but outside the method using static keyword.
       -> They are COMMON/STATIC to each object.
       -> While accessing static variables, recommended to use classname.variable_name.
+
+
+ Static Blocks & NON-Static Blocks :
+    
+  * Static Blocks :
+       1.Static block in java is a block of code,gets executed when CLASS IS LOADED into memory by JVM.
+       2.Used for initiazing static variables.
+       3.Comfiguration data that should load even before main nmethod execution.
+  * Non-Static Blocks :
+       1.Non-Static Blocks in java is a block of code,gets executed when OBJECT IS CREATED.
+       2.Used for initiazing Non-Static/Instance Variables(Constructors)
+       3.Constructors internally use Non-Static Block only for Initiazation.
+
+Static Blocks:
+-----------------------------------------------
+     Purpose  : Primarily used to initialize static variables or perform class-level setup tasks 
+                that only need to happen once.
+     Execution: Executed only once when the class is loaded into memory by the Java Virtual Machine (JVM), 
+                before any object of that class is created and even before the main method (if present) is executed.
+     Scope    : Can only access static members (variables and methods) of the class. 
+                They cannot directly access non-static members as those are associated with specific objects.
+     Syntax   : Defined using the static keyword followed by a block of code.  
+
+            Example Program: 
+              class MyClass {
+                   static int staticVar;
+                   static {
+                        staticVar = 10;
+                        System.out.println("Static block executed.");
+                  }
+                }     
                    
- 
+Non-Static (Instance) Blocks:
+---------------------------------------------------
+      Purpose   : Used to initialize instance variables or perform tasks that need to be 
+                  executed for every object created from the class.
+      Execution : Executed every time a new object of the class is created, just before the constructor is called. 
+                  If there are multiple instance blocks, they execute in the order they appear in the class.
+      Scope     : Can access both static and non-static members of the class.
+      Syntax    : Defined as a block of code directly within the class, without any keywords like static.
+        
+        Example Program :
+          class MyClass {
+                  int instanceVar;
+                   {
+                         instanceVar = 20;
+                         System.out.println("Non-static block executed.");
+                   }
+                  MyClass() {
+                    System.out.println("Constructor executed.");
+                   }
+                  }
+
+      In Java, both static and non-static (or instance) blocks are used for initialization, but they differ in their execution timing and scope. 
+Static Blocks: 
+--------------------------------------------------
+• Purpose: Primarily used to initialize static variables or perform class-level setup tasks that only need to happen once. 
+• Execution: Executed only once when the class is loaded into memory by the Java Virtual Machine (JVM), before any object of that class is created and even before the main method (if present) is executed. 
+• Scope: Can only access static members (variables and methods) of the class. They cannot directly access non-static members as those are associated with specific objects. 
+• Syntax: Defined using the static keyword followed by a block of code. 
+
+    class MyClass {
+        static int staticVar;
+        static {
+            staticVar = 10;
+            System.out.println("Static block executed.");
+        }
+    }
+
+Non-Static (Instance) Blocks: 
+--------------------------------------------------
+• Purpose: Used to initialize instance variables or perform tasks that need to be executed for every object created from the class. 
+• Execution: Executed every time a new object of the class is created, just before the constructor is called. If there are multiple instance blocks, they execute in the order they appear in the class. 
+• Scope: Can access both static and non-static members of the class. 
+• Syntax: Defined as a block of code directly within the class, without any keywords like static. 
+
+    class MyClass {
+        int instanceVar;
+        {
+            instanceVar = 20;
+            System.out.println("Non-static block executed.");
+        }
+        MyClass() {
+            System.out.println("Constructor executed.");
+        }
+    }
+
+Key Differences Summarized: 
+
+ Feature   |               Static Block                   |    Non-Static Block  
+ ----------|----------------------------------------------|---------------------------------------------------
+ Execution |      Once, when class is loaded              |   Every time an object is created  
+ Timing    |      Before any object creation/constructor  |   Before the constructor call for each object  
+ Scope     |      Static members only                     |   Both static and non-static members  
+ Keyword   |      static                                  |   None  
+ Use Case  |      Class-level initialization              |   Object-level initialization  
+
+
+
+
+            
