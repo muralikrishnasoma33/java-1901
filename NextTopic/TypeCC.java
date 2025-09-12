@@ -25,7 +25,7 @@ public class TypeCC {
         System.out.println(newdata+200);
 
         //Conversion Not Possible at all
-        int j = 89;
+        //int j = 89;
         //boolean newj = (int) j;
     }  
 }
