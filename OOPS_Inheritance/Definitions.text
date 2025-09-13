@@ -42,3 +42,26 @@ OOPS-INHERITANCE :
              Enables method overriding, allowing different implementations of the same method in subclasses.
         4.Abstraction:
              Facilitates the presentation of essential functionalities while hiding implementation details.
+     
+
+    --> Example Program:
+     --------------------------------------------- 
+          class Animal {
+                 void eat() {
+                 System.out.println("This animal eats food.");
+                }
+            }
+
+               class Dog extends Animal { // Dog inherits from Animal
+          void bark() {
+                 System.out.println("The dog barks.");
+                }
+            }
+
+        public class TestInheritance {
+            public static void main(String[] args) {
+                   Dog myDog = new Dog();
+                   myDog.eat();  // Inherited from Animal
+                   myDog.bark(); // Defined in Dog
+            }
+        }
