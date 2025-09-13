@@ -1,0 +1,44 @@
+OOPS-INHERITANCE :
+--------------------------------------------
+     --> Definition:
+        ------------
+      1.Inheritance in Java is a fundamental concept of Object-Oriented Programming (OOP) 
+      2.Inheritance allows a class to inherit properties and behaviors (fields and methods) from another class. 
+      3.This mechanism promotes code reusability, extensibility, and polymorphism.
+
+     --> Key Concepts :
+      ----------------
+      1.SuperClass (Parent Class) :  The Class Whose Features are Inherited.
+      2.SubClass (Child Class)    :  The Class that inherits features from SuperClass.
+
+      3.EXTENDS Keyword :  Used to establish an inheritance relationship, indicating that a class inherits from another.
+             For example: class Dog extends Animal { ... }
+
+            How it Works:
+                 * A subclass, using the extends keyword, declares its inheritance from a superclass.
+                 * The subclass automatically gains access to all non-private members (fields and methods)
+                   of its superclass.
+                 * The subclass can also define its own unique fields and methods, or override inherited 
+                   methods to provide specialized implementations (polymorphism).         
+
+    --> Types of Inheritance (Supported in Java):
+    -----------------------------------------------------
+       1.Single Inheritance      : A class inherits from only one superclass. This is the most common and directly supported type.
+       2.Multilevel Inheritance  : A chain of inheritance where a class inherits from another class, which itself inherits 
+                                   from a third class (e.g., Class C extends Class B, and Class B extends Class A).
+       3.Hierarchical Inheritance: Multiple classes inherit from a single superclass.
+        > Unsupported in Java :  
+        -----------------------
+       4.Multilevel Inheritance  : Java does not support multiple inheritance of classes (inheriting from more than one superclass) 
+                                   to avoid the "diamond problem," a potential ambiguity in method resolution. However, it achieves 
+                                   a similar concept through interfaces, where a class can implement multiple interfaces. 
+    --> Advantages of Inheritance:
+      --------------------------------------------
+        1.Code Reusability:
+             Reduces code duplication by allowing subclasses to reuse superclass functionality.
+        2.Extensibility:
+             New functionalities can be added to existing classes without modifying them directly.
+        3.Polymorphism:
+             Enables method overriding, allowing different implementations of the same method in subclasses.
+        4.Abstraction:
+             Facilitates the presentation of essential functionalities while hiding implementation details.
