@@ -6,12 +6,13 @@ public class User {
         g1.WatchVideos();
 
         VideoAdmin v1 = new VideoAdmin();
-        v1.watchVideos();
+        v1.WatchVideos();
         v1.addVideos();
 
         Admin a1 = new Admin();
-        a1.watchVideos();
+        a1.WatchVideos();
         a1.addVideos();
+        
         a1.deleteVideos();
 
     }
