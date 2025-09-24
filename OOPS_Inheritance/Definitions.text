@@ -65,3 +65,76 @@ OOPS-INHERITANCE :
                    myDog.bark(); // Defined in Dog
             }
         }
+
+
+
+     Super Keyword :
+     ------------------------------------
+
+       --> The super keyword in Java is a reference variable used to refer to the immediate parent class (superclass) 
+           object. It is primarily used in the context of inheritance to access members of the superclass from within a subclass.
+     Uses of the super keyword:
+     --------------------------
+       --> 1. Referring to immediate parent class instance variables:
+
+             When a subclass has an instance variable with the same name as an instance variable in its 
+          superclass (field hiding), super.variableName can be used to explicitly access the superclass's variable.
+
+     Example Program :
+     ----------------------------
+        class Animal {
+        String color = "white";
+        }
+
+        class Dog extends Animal {
+        String color = "black";
+        void printColor() {
+            System.out.println(color); // Prints "black" (subclass's color)
+            System.out.println(super.color); // Prints "white" (superclass's color)
+        }
+       }    
+     --------------------------------------------------------------------------------------------------------------------  
+       --> 2. Invoking immediate parent class methods.
+
+              If a subclass overrides a method from its superclass, super.methodName() can be used to call the 
+          overridden method of the superclass from within the subclass's overridden method.
+
+     Example Program:
+     --------------------
+        class Animal {
+        void makeSound() {
+            System.out.println("The animal makes a sound");
+        }
+       }
+
+        class Dog extends Animal {
+        @Override
+        void makeSound() {
+            super.makeSound(); // Calls Animal's makeSound()
+            System.out.println("The dog barks");
+        }
+       }     
+     -------------------------------------------------------------------------------------------------------------------------
+     --> 3.Invoking immediate parent class constructors.
+
+             The super() call is used within a subclass constructor to explicitly invoke a constructor of 
+          its superclass. This call must be the first statement in the subclass constructor.   
+
+     Example Program:
+     ------------------
+        class Animal {
+        Animal(String type) {
+            System.out.println("This is a " + type);
+        }
+       }
+
+        class Dog extends Animal {
+        Dog() {
+            super("mammal"); // Calls Animal's constructor
+            System.out.println("This is a dog");
+        }
+       }     
+
+
+
+      
