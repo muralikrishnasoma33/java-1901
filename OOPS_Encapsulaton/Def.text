@@ -1,0 +1,254 @@
+Access Modifiers :
+----------------------
+  1. Access modifiers in Java define the scope (visibility)/access of classes, methods, and variables.
+  2. Think of them as doors with locks that decide how much access other code has.
+  3. They are essential for encapsulation, a core concept of OOP (Object-Oriented Programming), 
+     because they control information hiding and access restriction.
+
+     Types Of Access Modifiers:
+     --------------------------
+     1. public
+     2. private
+     3. protected
+     4. default
+
+
+1. public :
+------------
+      -> Can be accessed from anywhere (inside the same class, other classes, other packages).
+                                       --------------------------------------------------------
+      -> Scope: The widest visibility.
+      -> 🔓 Completely open door. 
+
+    Example Program :
+    -----------------
+    package p1;
+    public class A {
+    public void display() {
+        System.out.println("Public method in A");
+     }
+    }
+
+    package p2;
+    import p1.A;
+
+    public class B{
+        public static void main(String[] args)
+        A obj = new A();
+        obj.display(); // Accessible From Other Class
+    }
+    
+
+2.private :
+------------
+      -> Scope: Strictest visibility.
+      -> A private member is accessible only within the same class.
+                                            ------------------------
+      -> Not visible to subclasses or other classes, even in the same package.
+                     ------------------------------
+      -> Ensures data hiding.
+                 ------------
+      -> 🔒 Locked door – only the owner can enter.
+
+
+
+    Exmaple Program :
+    ------------------
+    class Account {
+    private double balance = 1000;
+
+    private void showBalance() {
+        System.out.println("Balance: " + balance);
+    }
+
+    public void accessBalance() {
+        showBalance();  // Allowed here
+    }
+    }
+
+    class Test {
+    public static void main(String[] args) {
+        Account acc = new Account();
+        // acc.showBalance(); ❌ Not allowed
+        acc.accessBalance();  // ✅ Access through public method
+    }
+    }
+
+      NOTE : Design principle: private members are usually exposed via getters/setters.
+
+
+3. protected :
+--------------
+      -> Scope: Package + Inheritance.
+      -> Accessible :
+            > Inside the same package (like default), and
+            > By subclasses, even if they are in different packages.
+        Important Notes:
+        ------------------
+           A protected member in a superclass can be accessed in a subclass only through inheritance,
+        not by object reference outside the package.
+
+    Example program :
+    ------------------
+    package p1;
+
+    public class Parent {
+    protected String msg = "Protected Member";
+    }
+
+    package p2;
+    import p1.Parent;
+
+    class Child extends Parent {
+    public void print() {
+        System.out.println(msg); // ✅ Accessible due to inheritance
+    }
+    }
+
+    class Test {
+    public static void main(String[] args) {
+        Child c = new Child();
+        c.print();
+
+        // c.msg; ❌ Not allowed directly
+    }
+    }
+
+4. default :
+---------------
+      -> Scope: Within the same package only.
+      -> If no modifier is specified, the member is considered default.
+      -> Accessible to all classes inside the same package, but not accessible outside the package. 
+
+    Example Program :
+    ------------------
+
+    package p1;
+
+    class DefaultClass {
+    void show() {
+        System.out.println("Default access");
+    }
+    }
+
+    package p2;
+
+    class Test {
+    public static void main(String[] args) {
+        // DefaultClass obj = new DefaultClass(); ❌ Not visible outside package
+    }
+    }
+
+
+
+📊 Comparison Table :
+======================
+----------------------------------------------------------------------------------------
+|   | Modifier  | Same Class | Same Package | Subclass (other package) | Other Package |
+| ------------- | ---------- | ------------ | ------------------------ | ------------- |
+| **public**    | ✅         | ✅          | ✅                       | ✅           |
+| **protected** | ✅         | ✅          | ✅ (only via inheritance)| ❌           |
+| **default**   | ✅         | ✅          | ❌                       | ❌           |
+| **private**   | ✅         | ❌          | ❌                       | ❌           |
+----------------------------------------------------------------------------------------
+
+
+============================================================================================================
+                                               ENCAPSULATION
+============================================================================================================ 
+
+    🔒 What is Encapsulation?
+    --------------------------------
+            -> Encapsulation is the process of hiding the internal details (data) of a class and only 
+               exposing what is necessary through methods.
+            -> 👉Think of it like a capsule in medicine:
+                  > The medicine (data) is hidden inside.
+                  > You can only take it in the safe way the capsule provides
+                  ✨ Key Points of Encapsulation
+        Key Concepts Of encapsulation :
+        -------------------------------
+            -> Make variables private → so no one can access them directly.
+                             ----------
+            -> Provide public getters and setters → so others can read/write them safely.
+                       ---------------------------
+            -> Ensures data hiding + security.
+            -> Allows control over data (you can add conditions before setting values).
+
+        Getters & setters :
+        -------------------
+            -> Getters : A getter is a method that returns the value of a private variable.
+            -> Setters : A setter is a method that sets/updates the value of a private variable.
+
+        🔑 Benefits of Encapsulation :
+        --------------------------------
+            -> Data Hiding → outside code can’t directly touch private data.
+            -> Control → you decide how values are set or changed.
+            -> Flexibility → internal code can change without affecting outside code.
+            -> Security → sensitive info (like passwords, balance) is protected.
+
+        👉 So in short :
+        -----------------
+             Encapsulation = Data (variables) + Code (methods) wrapped together → with access controlled using 
+             private + getters/setters.   
+
+
+    ✅ Example Program: Bank Account
+    -----------------------------------
+    class BankAccount {
+        // Step 1: Private data (hidden)
+
+        private String accountHolder;
+        private double balance;
+
+        // Step 2: Public getter (to read value)
+
+    public String getAccountHolder() {
+        return accountHolder;
+        }
+
+        // Step 3: Public setter (to set value with control)
+
+    public void setAccountHolder(String name) {
+        if (name != null && !name.isEmpty()) {
+            this.accountHolder = name;
+        } else {
+            System.out.println("Invalid name!");
+        }
+        }
+
+    public double getBalance() {
+        return balance;
+        }
+
+    public void deposit(double amount) {
+        if (amount > 0) {
+            balance += amount;
+        } else {
+            System.out.println("Deposit must be positive!");
+        }
+        }
+
+    public void withdraw(double amount) {
+        if (amount > 0 && amount <= balance) {
+            balance -= amount;
+        } else {
+            System.out.println("Invalid withdraw!");
+        }
+        }
+        }
+
+
+        // implementation
+    --------------------------
+        public class Test {
+    public static void main(String[] args) {
+        BankAccount acc = new BankAccount();
+
+        acc.setAccountHolder("Murali");   // Setting value safely
+        acc.deposit(5000);                // Adding money
+        acc.withdraw(2000);               // Withdrawing safely
+
+        System.out.println("Name: " + acc.getAccountHolder());
+        System.out.println("Balance: " + acc.getBalance());
+    }
+    }
